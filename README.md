@@ -2,6 +2,7 @@
 
 This is a hardware implemetation of [Fibonacci number](https://en.wikipedia.org/wiki/Fibonacci_number) calculator written in Verilog-HDL.
 It supports req/ack handshake protocol.
+I've tested on MU500-RX and DE1-SoC fpga board.
 
 ## Required Tools
 
