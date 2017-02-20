@@ -22,10 +22,8 @@ The source code is organized as follows:
 ```text
 docs/       documentation
 fpga/       fpga related files
-memory/     memory dependencies
 rtl/        RTL files for Motion Estimation Processor
 testbench/  test suites
-tools/      tool for creating mif file
 ```
 
 ## Port declaration
