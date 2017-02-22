@@ -28,21 +28,21 @@ wire clk = CLOCK_50;
 wire RSTN = KEY[2];
 
 // detect falling edge
-reg [1:0] ff_sw4 = 0;
-reg [1:0] ff_sw5 = 0;
+reg [1:0] ff_req_raise = 0;
+reg [1:0] ff_req_fall  = 0;
 always @(posedge clk) begin
-  ff_sw4 <= {ff_sw4[0], KEY[0]};
-  ff_sw5 <= {ff_sw5[0], KEY[1]};
+  ff_req_raise <= {ff_req_raise[0], KEY[0]};
+  ff_req_fall  <= {ff_req_fall [0], KEY[1]};
 end
-wire tri_sw4 = (ff_sw4 == 2'b10);
-wire tri_sw5 = (ff_sw5 == 2'b10);
+wire tri_raise = (ff_req_raise == 2'b10);
+wire tri_fall  = (ff_req_fall  == 2'b10);
 
 always @(posedge clk or negedge RSTN) begin
   if(~RSTN)
     req <= 0;
-  else if(tri_sw4)
+  else if(tri_raise)
     req <= 1;
-  else if(tri_sw5)
+  else if(tri_fall)
     req <= 0;
 end
 
