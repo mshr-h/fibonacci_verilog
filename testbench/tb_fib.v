@@ -1,6 +1,6 @@
 `include "../rtl/fib.v"
-`default_nettype none
 
+`default_nettype none
 module tb_fib;
 
 localparam

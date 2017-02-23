@@ -1,3 +1,4 @@
+`default_nettype none
 module fib
 #(
   parameter N_IN  = 7,
@@ -72,3 +73,4 @@ always @(posedge clk or negedge rst_n) begin
 end
 
 endmodule
+`default_nettype wire
